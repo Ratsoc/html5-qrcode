@@ -635,9 +635,9 @@ export class Html5Qrcode {
      */
     public scanFileV2(imageFile: File, /* default=true */ showImage?: boolean)
         : Promise<Html5QrcodeResult> {
-        if (!imageFile || !(imageFile instanceof File)) {
+        if (!imageFile || !(imageFile instanceof Blob)) {
             throw "imageFile argument is mandatory and should be instance "
-                + "of File. Use 'event.target.files[0]'.";
+                + "of Blob.";
         }
 
         if (isNullOrUndefined(showImage)) {
